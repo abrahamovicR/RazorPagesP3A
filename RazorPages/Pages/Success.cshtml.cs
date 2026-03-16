@@ -8,8 +8,8 @@ namespace RazorPages.Pages
 {
     public class SuccessModel : PageModel
     {
-        private readonly AppDbContext _context;
-        public SuccessModel(AppDbContext context)
+        private readonly DataContext _context;
+        public SuccessModel(DataContext context)
         {
             _context = context;
         }

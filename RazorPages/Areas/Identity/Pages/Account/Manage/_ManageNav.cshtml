@@ -1,4 +1,6 @@
-﻿@inject SignInManager<RazorPagesUser> SignInManager
+﻿@using RazorPages.Models
+
+@inject SignInManager<RazorPagesUser> SignInManager
 @{
     var hasExternalLogins = (await SignInManager.GetExternalAuthenticationSchemesAsync()).Any();
 }

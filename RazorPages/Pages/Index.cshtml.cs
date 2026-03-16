@@ -7,9 +7,9 @@ namespace RazorPages.Pages
 {
     public class IndexModel : PageModel
     {
-        private readonly AppDbContext _context;
+        private readonly DataContext _context;
 
-        public IndexModel(AppDbContext context)
+        public IndexModel(DataContext context)
         {
             _context = context;
         }

@@ -9,7 +9,7 @@ using RazorPages.Data;
 
 namespace RazorPages.Migrations
 {
-    [DbContext(typeof(AppDbContext))]
+    [DbContext(typeof(DataContext))]
     [Migration("20260302131244_Initial")]
     partial class Initial
     {

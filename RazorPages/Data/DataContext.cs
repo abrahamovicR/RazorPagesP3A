@@ -6,7 +6,7 @@ namespace RazorPages.Data
     public class DataContext : IdentityDbContext<RazorPagesUser>
     {
 
-        public DataContext(DbContextOptions<RazorPagesContext> options)
+        public DataContext(DbContextOptions<DataContext> options)
         : base(options)
         {
         }
@@ -19,7 +19,6 @@ namespace RazorPages.Data
             // Add your customizations after calling base.OnModelCreating(builder);
         }
 
-        public DataContext(DbContextOptions<DataContext> options) : base(options) { }
 
         public DbSet<FormIEM> Submissions { get; set; }
     }

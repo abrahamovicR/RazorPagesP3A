@@ -11,7 +11,18 @@ builder.Services.AddRazorPages();
 builder.Services.AddDbContext<DataContext>(options =>
     options.UseSqlite("Data Source=app.db"));
 
-builder.Services.AddDefaultIdentity<RazorPagesUser>(options => options.SignIn.RequireConfirmedAccount = true).AddEntityFrameworkStores<DataContext>();
+builder.Services.AddDefaultIdentity<RazorPagesUser>(options =>
+{
+    options.SignIn.RequireConfirmedAccount = true;
+    options.Password.RequireDigit = false;
+    options.Password.RequireLowercase = false;
+    options.Password.RequireUppercase = false;
+    options.Password.RequireNonAlphanumeric = false;
+    options.Password.RequiredLength = 2;
+    options.Password.RequiredUniqueChars = 0;
+}).AddEntityFrameworkStores<DataContext>();
+
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
