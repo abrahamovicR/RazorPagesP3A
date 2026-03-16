@@ -1,0 +1,19 @@
+﻿@page "{handler?}/{count:int?}"
+@model RazorPages.Pages.Index.IndexModel
+@{
+	ViewData["Title"] = "Nevím bro";
+	string x = "ghghdjwakhdjwka";
+}
+
+<h1>@x</h1>
+<div>
+	<p>@Model.Clicker.msg: celkem ma @Model.Clicker.Clicker</p>
+</div>
+<div>
+	<ul>
+		<li><a asp-page="Index" asp-page-handler="Better">Lepsi</a></li>
+		<li><a asp-page="Index" asp-page-handler="Best">Jeste Lepsi</a></li>
+		<li><a asp-page="Index" asp-page-handler="Best" asp-route-count="88" >Lepsi Lepsi</a></li>
+	</ul>
+	
+</div>

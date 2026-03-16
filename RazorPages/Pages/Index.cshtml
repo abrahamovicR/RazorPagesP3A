@@ -1,0 +1,33 @@
+﻿@page
+@model IndexModel
+@{
+	Layout = "_Layout";
+    ViewData["Title"] = "Home page";
+	this.Model.Header = "Hello from the Index page!";
+}
+
+<div class="text-center">
+    <h1 class="display-4">@(Model.Header)</h1>
+    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+    
+    <div>
+        <form method="post" asp-action="">
+            <div class="form-group">
+                <label asp-for="@Model.Form.Name">Name</label>
+                <input asp-for="@Model.Form.Name" class="form-control" />
+                <span asp-validation-for="@Model.Form.Name" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="@Model.Form.Email">Email</label>
+                <input asp-for="@Model.Form.Email" class="form-control" />
+                <span asp-validation-for="@Model.Form.Email" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="@Model.Form.Message">Message</label>
+                <input asp-for="@Model.Form.Message" class="form-control" />
+                <span asp-validation-for="@Model.Form.Message" class="text-danger"></span>
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+    </div>
+</div>
