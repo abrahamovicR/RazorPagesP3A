@@ -1,3 +1,4 @@
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using RazorPages.Data;
@@ -5,6 +6,8 @@ using RazorPages.Models;
 
 namespace RazorPages.Pages
 {
+    //[Authorize]
+    //[Authorize(Roles = "Admin")]
     public class IndexModel : PageModel
     {
         private readonly DataContext _context;

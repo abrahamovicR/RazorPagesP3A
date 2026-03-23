@@ -2,6 +2,7 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using RazorPages.Data;
 
@@ -10,9 +11,11 @@ using RazorPages.Data;
 namespace RazorPages.Migrations
 {
     [DbContext(typeof(DataContext))]
-    partial class AppDbContextModelSnapshot : ModelSnapshot
+    [Migration("20260323125424_Seeding")]
+    partial class Seeding
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder.HasAnnotation("ProductVersion", "10.0.3");
@@ -45,8 +48,8 @@ namespace RazorPages.Migrations
                     b.HasData(
                         new
                         {
-                            Id = "a04dde26-8820-445e-b6dc-1e15d14617c1",
-                            ConcurrencyStamp = "4a6edeca-e88d-4288-b50f-74f5880d1799",
+                            Id = "3d5db7f8-cd6e-44b8-a6f9-4c963128c807",
+                            ConcurrencyStamp = "53649917-bf11-4a7c-ae73-b0df619ff1ac",
                             Name = "Admin",
                             NormalizedName = "ADMIN"
                         });
@@ -129,19 +132,19 @@ namespace RazorPages.Migrations
                     b.HasData(
                         new
                         {
-                            Id = "7f8b4059-dd42-449f-9c09-a47664c02c0e",
+                            Id = "36306eda-44fa-41f4-beac-833b5f3f8823",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "4f4b6fa2-0a0d-4b43-ac6f-1a3b2db0524c",
-                            Email = "admin@admin.cz",
-                            EmailConfirmed = false,
+                            ConcurrencyStamp = "95fd9b13-4e62-404b-a954-5bed0740a8df",
+                            Email = "admin@test.cz",
+                            EmailConfirmed = true,
                             LockoutEnabled = false,
-                            NormalizedEmail = "ADMIN@ADMIN.CZ",
-                            NormalizedUserName = "ADMIN@ADMIN.CZ",
-                            PasswordHash = "AQAAAAIAAYagAAAAEFo6h97AMWlii2B5cOoTkCsvhVH3LyRTg/RhAmO4DCHN/2KmwuUV1iGJ+JQcKwhgQg==",
+                            NormalizedEmail = "ADMIN@TEST.CZ",
+                            NormalizedUserName = "ADMIN@TEST.CZ",
+                            PasswordHash = "AQAAAAIAAYagAAAAEAFhPrBD5FKYJ4V/3LJWcptfKFouctFKzpfwO+b03aTXORP1nXY8APubJ2MatDM9Iw==",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "117a31f6-93c1-4bb9-868b-6b89f95079e0",
+                            SecurityStamp = "e267e74e-2c6c-4d4b-bdb7-f14eeeb91b08",
                             TwoFactorEnabled = false,
-                            UserName = "admin@admin.cz"
+                            UserName = "admin@test.cz"
                         });
                 });
 
@@ -209,8 +212,8 @@ namespace RazorPages.Migrations
                     b.HasData(
                         new
                         {
-                            UserId = "7f8b4059-dd42-449f-9c09-a47664c02c0e",
-                            RoleId = "a04dde26-8820-445e-b6dc-1e15d14617c1"
+                            UserId = "36306eda-44fa-41f4-beac-833b5f3f8823",
+                            RoleId = "3d5db7f8-cd6e-44b8-a6f9-4c963128c807"
                         });
                 });
 

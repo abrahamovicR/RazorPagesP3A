@@ -2,6 +2,7 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using RazorPages.Data;
 
@@ -10,9 +11,11 @@ using RazorPages.Data;
 namespace RazorPages.Migrations
 {
     [DbContext(typeof(DataContext))]
-    partial class AppDbContextModelSnapshot : ModelSnapshot
+    [Migration("20260323131743_seeding2")]
+    partial class seeding2
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder.HasAnnotation("ProductVersion", "10.0.3");

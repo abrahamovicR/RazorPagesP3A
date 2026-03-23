@@ -1,0 +1,11 @@
+﻿@page
+@model RazorPages.Pages.AdminModel
+@{
+    Layout = "_Layout";
+    ViewData["Title"] = "Admin page";
+    this.Model.Header = "Hello from the Admin page!";
+}
+<div>
+    <h1 class="display-4">@(Model.Header)</h1>
+    <p>This is the admin page. Only authorized users should see this.</p>
+</div>

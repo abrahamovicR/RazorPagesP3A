@@ -20,7 +20,8 @@ builder.Services.AddDefaultIdentity<RazorPagesUser>(options =>
     options.Password.RequireNonAlphanumeric = false;
     options.Password.RequiredLength = 2;
     options.Password.RequiredUniqueChars = 0;
-}).AddEntityFrameworkStores<DataContext>();
+}).AddRoles<IdentityRole>()
+    .AddEntityFrameworkStores<DataContext>();
 
 
 var app = builder.Build();
@@ -37,7 +38,8 @@ app.UseHttpsRedirection();
 
 app.UseRouting();
 
-app.UseAuthorization();
+app.UseAuthentication(); // 1. Nejdřív ověříme identitu (Kdo jsi?)
+app.UseAuthorization();  // 2. Pak řešíme práva (Co smíš?)
 
 app.MapStaticAssets();
 app.MapRazorPages()
